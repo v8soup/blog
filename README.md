@@ -1,5 +1,8 @@
 # README
-
+# Tutorial on the RoR website
+# Uses action_text
+# Uses local-time
+# Uses $ rails g resource comment post:references content:text
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
