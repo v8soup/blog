@@ -1,1 +1,2 @@
-function getLocalTime() { const now = new Date(); return now.toLocaleTimeString(); }
+function getLocalTime() { const now = new Date(); 
+    return now.toLocaleTimeString(); }
