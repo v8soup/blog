@@ -28,10 +28,21 @@ ENV RAILS_ENV="production" \
 # Throw-away build stage to reduce size of final image
 FROM base AS build
 
-# Install packages needed to build gems
+# Install packages and dependencies needed to build gems
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y build-essential git pkg-config && \
+    apt-get install --no-install-recommends -y \
+    build-essential \
+    git \
+    pkg-config \
+    libpq-dev \ 
+    nodejs \ 
+    imagemagick \ 
+    ffmpeg \ 
+    libjpeg62-turbo-dev \
+    poppler-utils \ 
+    yarn && \ 
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
+
 
 # Install application gems
 COPY Gemfile Gemfile.lock ./
